@@ -15,17 +15,15 @@ function SelectField({
   placeholder,
   options,
   required,
-  defaultValue = "",
   className,
 }: {
   name: string;
   placeholder: string;
   options: string[];
   required?: boolean;
-  defaultValue?: string;
   className: string;
 }) {
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState("");
 
   return (
     <div className="relative">
@@ -52,14 +50,12 @@ function SelectField({
   );
 }
 
-/** The enquiry form: used in the modal (compact) and in the contact section */
+/** The enquiry form in the contact section */
 export default function EnquiryForm({
   data: form = site.enquiryFormSection,
-  defaultEnquiryFor = "",
-  compact = false,
-}: SectionProps<MaisonElvaEnquiryFormData> & { defaultEnquiryFor?: string; compact?: boolean }) {
+}: SectionProps<MaisonElvaEnquiryFormData>) {
   const submit = useDummySubmit();
-  const height = compact ? "h-12" : "h-13";
+  const height = "h-13";
 
   return (
     <>
@@ -69,7 +65,8 @@ export default function EnquiryForm({
         onSubmit={submit.onSubmit}
         onInput={submit.onInput}
         aria-busy={submit.sending}
-        className="mt-6 grid gap-4 sm:grid-cols-2"
+        // on desktop the message box takes up any spare height of the contact section card
+        className="mt-6 grid gap-4 sm:grid-cols-2 lg:flex-1 lg:grid-rows-[auto_auto_auto_1fr_auto]"
       >
         <input name="name" required placeholder={form.fields.name} aria-label={form.fields.name} autoComplete="name" className={`${field} ${height}`} />
         <input name="phone" type="tel" required placeholder={form.fields.phone} aria-label={form.fields.phone} autoComplete="tel" className={`${field} ${height}`} />
@@ -86,7 +83,6 @@ export default function EnquiryForm({
           name="enquiryFor"
           placeholder={form.fields.enquiryFor}
           options={form.enquiryOptions}
-          defaultValue={submit.round === 0 ? defaultEnquiryFor : ""}
           required
           className={height}
         />
@@ -94,10 +90,10 @@ export default function EnquiryForm({
         <textarea
           name="message"
           required
-          rows={compact ? 3 : 4}
+          rows={4}
           placeholder={form.fields.message}
           aria-label={form.fields.message}
-          className={`${field} resize-y py-3 sm:col-span-2`}
+          className={`${field} resize-y py-3 sm:col-span-2 lg:h-full`}
         />
         <button
           type="submit"

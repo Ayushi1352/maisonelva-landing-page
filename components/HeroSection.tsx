@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { site, type MaisonElvaHeroData, type SectionProps } from "@/data";
-import { EnquiryButton } from "@/components/EnquiryModal";
 
 export default function HeroSection({ data: hero = site.hero, className = "" }: SectionProps<MaisonElvaHeroData>) {
   return (
@@ -18,13 +17,13 @@ export default function HeroSection({ data: hero = site.hero, className = "" }: 
             {hero.titleBottom}
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">{hero.description}</p>
-          {/* main call-to-action opens the enquiry form; the second one scrolls down to the contact section */}
-          <div className="mt-9 grid gap-3 sm:flex sm:flex-wrap sm:gap-4">
-            <EnquiryButton>{hero.button.label}</EnquiryButton>
-            <a href={hero.secondaryButton.href} className="inline-flex items-center justify-center gap-2 border border-maroon px-7 py-3.5 font-display text-sm uppercase tracking-[0.18em] text-maroon transition-colors hover:bg-maroon hover:text-white">
-              {hero.secondaryButton.label}
-            </a>
-          </div>
+          {/* the one call-to-action scrolls down to the contact section */}
+          <a
+            href={hero.button.href}
+            className="mt-9 inline-flex w-full items-center justify-center gap-2 border border-maroon bg-maroon px-7 py-3.5 font-display text-sm uppercase tracking-[0.18em] text-white shadow-[0_10px_30px_-12px_rgba(79,21,29,0.6)] transition-colors hover:bg-white hover:text-maroon sm:w-auto"
+          >
+            {hero.button.label}
+          </a>
           <dl className="mt-12 grid max-w-md grid-cols-3 divide-x divide-gold/30 border-t border-gold/30 pt-6">
             {hero.highlights.map((item) => (
               <div key={item.title} className="px-3 first:pl-0">

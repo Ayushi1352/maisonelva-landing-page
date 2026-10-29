@@ -133,7 +133,8 @@
               }
             ],
             "cta": {
-              "label": "Enquiry Now"
+              "label": "Contact Us",
+              "href": "#contact"
             },
             "labels": {
               "mainNav": "Main navigation",
@@ -154,9 +155,6 @@
             "titleBottom": "Collection",
             "description": "Crafted to celebrate your unique story, our jewellery blends modern sophistication with timeless artistry — from heirloom bridal sets to everyday gold you’ll never take off.",
             "button": {
-              "label": "Explore Collection"
-            },
-            "secondaryButton": {
               "label": "Contact Us",
               "href": "#contact"
             },
@@ -224,10 +222,7 @@
                 "suffix": "%",
                 "label": "Certified Diamonds"
               }
-            ],
-            "button": {
-              "label": "Book a Private Viewing"
-            }
+            ]
           }
         }
       },
@@ -277,10 +272,6 @@
               "titleAccent": "Bracelet",
               "titleBottom": "Edit",
               "description": "Sculptural gold, softly textured — designed to stack, gift and treasure.",
-              "button": {
-                "label": "Enquire Now",
-                "enquiryFor": "Bracelets"
-              },
               "itemMeta": "Bracelet · Golden",
               "items": [
                 {
@@ -349,9 +340,6 @@
                 "alt": "Diamond-set golden hoop earrings"
               }
             ],
-            "button": {
-              "label": "Request the Full Lookbook"
-            },
             "viewerLabel": "Gallery image viewer",
             "closeLabel": "Close viewer",
             "previousLabel": "Previous image",
@@ -458,12 +446,6 @@
       "EnquiryForm": {
         "variants": {
           "MaisonElvaEnquiryForm1": {
-            "label": "Enquiry Now",
-            "title": "Begin Your Jewellery Journey",
-            "description": "Share a few details and our jewellery consultant will reach out within 24 hours.",
-            "image": "/images/home/testimonial-model.webp",
-            "imageLabel": "Private Consultation",
-            "imageQuote": "“Jewellery that tells your story.”",
             "fields": {
               "name": "Your Name*",
               "phone": "Phone Number*",
@@ -491,8 +473,7 @@
             "sending": "Sending…",
             "successTitle": "Thank you, {name}!",
             "success": "Your enquiry has been received. Our consultant will contact you within 24 hours.",
-            "closeLabel": "Close message",
-            "closeModalLabel": "Close enquiry form"
+            "closeLabel": "Close message"
           }
         }
       },

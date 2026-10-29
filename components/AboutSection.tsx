@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { site, type MaisonElvaAboutData, type SectionProps } from "@/data";
-import { EnquiryButton } from "@/components/EnquiryModal";
 
 /** Counts up to `value` the first time it scrolls into view (shows the final number without JS or with reduced motion) */
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -105,8 +104,6 @@ export default function AboutSection({ data: about = site.aboutSection, classNam
               </div>
             ))}
           </dl>
-
-          <EnquiryButton className="mt-10">{about.button.label}</EnquiryButton>
         </div>
       </div>
     </section>

@@ -57,7 +57,8 @@ export default function ContactSection({ data: contact = site.contactSection, cl
           </ul>
         </div>
 
-        <div data-reveal className="relative self-start bg-sand p-6 sm:p-10">
+        {/* on desktop the form card stretches to the height of the left column, so both end on the same line */}
+        <div data-reveal className="relative flex flex-col bg-sand p-6 sm:p-10">
           <div aria-hidden="true" className="absolute left-0 top-0 h-1 w-full bg-linear-to-r from-maroon via-gold to-maroon" />
           <p className="font-display text-xs uppercase tracking-[0.3em] text-gold">{contact.form.label}</p>
           <h3 className="mt-2 font-serif text-3xl font-semibold text-maroon sm:text-4xl">{contact.form.title}</h3>

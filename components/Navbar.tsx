@@ -1,13 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site, type MaisonElvaHeaderData, type SectionProps } from "@/data";
-import { EnquiryButton } from "@/components/EnquiryModal";
 import { Close, Menu } from "@/components/Icons";
 
 /** id of the landing page section a link points to ("#about" → "about") */
 const sectionId = (href: string) => href.replace(/^#/, "");
+
+/** Look of the header "Contact Us" button (filled maroon, turns white on hover) */
+const ctaClass =
+  "inline-flex items-center justify-center border border-maroon bg-maroon font-display text-sm uppercase tracking-[0.18em] text-white shadow-[0_10px_30px_-12px_rgba(79,21,29,0.6)] transition-colors hover:bg-white hover:text-maroon";
 
 /** Keeps track of the section in the middle of the screen, so its link is shown as the current one */
 function useActiveSection(ids: string[]) {
@@ -33,6 +37,8 @@ function useActiveSection(ids: string[]) {
 export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHeaderData>) {
   const { brand, navigation: links, cta, labels } = data;
   const [ids] = useState(() => links.map((link) => sectionId(link.href)));
+  // the "Contact Us" button already leads to the contact section, so its link is left out of both menus
+  const menuLinks = links.filter((link) => link.href !== cta.href);
   const active = useActiveSection(ids);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -51,6 +57,15 @@ export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHe
     };
   }, [open]);
 
+  /** The logo scrolls back to the top and drops any "#section" from the address bar, without reloading the page */
+  const goHome = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    event.preventDefault();
+    window.scrollTo({ top: 0 });
+    if (window.location.hash) history.pushState(null, "", window.location.pathname + window.location.search);
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 mx-auto max-w-[1920px] transition-all duration-300 ${
@@ -58,7 +73,7 @@ export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHe
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <a href={links[0].href} onClick={() => setOpen(false)} aria-label={labels.home}>
+        <Link href="/" onClick={goHome} aria-label={labels.home}>
           <Image
             quality={90}
             src={brand.logo.src}
@@ -69,10 +84,10 @@ export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHe
             sizes="200px"
             className="h-auto w-36 sm:w-44"
           />
-        </a>
+        </Link>
 
         <nav aria-label={labels.mainNav} className="hidden items-center gap-1 lg:flex">
-          {links.map((link) => {
+          {menuLinks.map((link) => {
             const current = sectionId(link.href) === active;
             return (
               <a
@@ -90,7 +105,9 @@ export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHe
         </nav>
 
         <div className="flex items-center gap-3">
-          <EnquiryButton className="px-6! py-3! max-sm:hidden">{cta.label}</EnquiryButton>
+          <a href={cta.href} className={`${ctaClass} px-6 py-3 max-sm:hidden`}>
+            {cta.label}
+          </a>
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
@@ -107,12 +124,13 @@ export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHe
       <nav
         id="mobile-menu"
         aria-label={labels.mobileNav}
-        className={`overflow-hidden border-t bg-page transition-[max-height] duration-500 lg:hidden ${
-          open ? "max-h-[calc(100dvh-5rem)] border-line" : "max-h-0 border-transparent"
+        // when open it fills the whole screen below the header, so the page behind it does not show through
+        className={`overflow-y-auto border-t bg-page transition-[height] duration-500 lg:hidden ${
+          open ? "h-[calc(100dvh-5rem)] border-line" : "h-0 border-transparent"
         }`}
       >
         <ul className="flex flex-col px-4 py-4 sm:px-6">
-          {links.map((link) => (
+          {menuLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -129,9 +147,9 @@ export default function Navbar({ data = site.navbar }: SectionProps<MaisonElvaHe
             </li>
           ))}
           <li className="pt-5 sm:hidden">
-            <EnquiryButton onClick={() => setOpen(false)} className="w-full">
+            <a href={cta.href} onClick={() => setOpen(false)} className={`${ctaClass} w-full px-7 py-3.5`}>
               {cta.label}
-            </EnquiryButton>
+            </a>
           </li>
         </ul>
       </nav>

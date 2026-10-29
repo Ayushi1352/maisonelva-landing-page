@@ -1,6 +1,5 @@
 import { site, type MaisonElvaGalleryData, type SectionProps } from "@/data";
 import GalleryGrid from "@/components/GalleryGrid";
-import { EnquiryButton } from "@/components/EnquiryModal";
 
 export default function GallerySection({ data: gallery = site.gallerySection, className = "" }: SectionProps<MaisonElvaGalleryData>) {
   return (
@@ -22,9 +21,6 @@ export default function GallerySection({ data: gallery = site.gallerySection, cl
         </div>
         <div className="mt-14">
           <GalleryGrid data={gallery} />
-        </div>
-        <div data-reveal className="mt-12 text-center">
-          <EnquiryButton variant="outline">{gallery.button.label}</EnquiryButton>
         </div>
       </div>
     </section>

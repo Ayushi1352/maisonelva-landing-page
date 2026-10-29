@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { site, type MaisonElvaCollectionsData, type SectionProps } from "@/data";
-import { EnquiryButton } from "@/components/EnquiryModal";
 import { ArrowRight } from "@/components/Icons";
 
-/** Category cards, each with a "Contact Us" button that opens the enquiry form for that category, plus the featured edit */
+/** Category cards, each with a "Contact Us" link down to the contact section, plus the featured edit */
 export default function CollectionsSection({ data: collections = site.collectionsSection, className = "" }: SectionProps<MaisonElvaCollectionsData>) {
   const { featured } = collections;
 
@@ -50,10 +49,13 @@ export default function CollectionsSection({ data: collections = site.collection
                 <h3 className="font-serif text-3xl font-semibold text-ink transition-colors group-hover:text-maroon">{card.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{card.text}</p>
                 <div className="mt-6 border-t border-line pt-5">
-                  <EnquiryButton variant="link" enquiryFor={card.title}>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 font-display text-sm uppercase tracking-[0.18em] text-maroon underline-offset-4 transition-colors hover:text-maroon-dark hover:underline"
+                  >
                     {collections.cardButton}
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </EnquiryButton>
+                  </a>
                 </div>
               </div>
             </article>
@@ -68,9 +70,6 @@ export default function CollectionsSection({ data: collections = site.collection
               {featured.titleTop} <em className="text-maroon">{featured.titleAccent}</em> {featured.titleBottom}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{featured.description}</p>
-            <EnquiryButton variant="outline" enquiryFor={featured.button.enquiryFor} className="mt-6">
-              {featured.button.label}
-            </EnquiryButton>
           </div>
           <div className="grid grid-cols-3 gap-3 sm:gap-5">
             {featured.items.map((item) => (
