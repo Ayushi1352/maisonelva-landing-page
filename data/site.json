@@ -1,0 +1,559 @@
+{
+  "MaisonElva": {
+    "theme": {
+      "colors": {
+        "page": "#fefdfb",
+        "sand": "#f6efe7",
+        "backdrop": "#f5f3ef",
+        "line": "#f0dfcb",
+        "field": "#fdfaf6",
+        "ink": "#222021",
+        "body": "#4a4a4a",
+        "muted": "#5c5c5c",
+        "subtle": "#8a8a8a",
+        "gold": "#b08858",
+        "gold-light": "#d2b68f",
+        "maroon": "#4f151d",
+        "maroon-dark": "#3a0f15",
+        "maroon-light": "#6e3a41"
+      },
+      "fonts": {
+        "cormorant": {
+          "family": "Cormorant Garamond",
+          "fallback": "Georgia, serif",
+          "weights": [
+            400,
+            500,
+            600,
+            700
+          ],
+          "italic": true
+        },
+        "marcellus": {
+          "family": "Marcellus",
+          "fallback": "Georgia, serif",
+          "weights": [
+            400
+          ],
+          "italic": false
+        },
+        "poppins": {
+          "family": "Poppins",
+          "fallback": "Arial, sans-serif",
+          "weights": [
+            300,
+            400,
+            500,
+            600
+          ],
+          "italic": false
+        }
+      }
+    },
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Header": "MaisonElvaHeader1",
+          "EnquiryForm": "MaisonElvaEnquiryForm1",
+          "Footer": "MaisonElvaFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Hero",
+                "component": "MaisonElvaHero1"
+              },
+              {
+                "key": "About",
+                "component": "MaisonElvaAbout1"
+              },
+              {
+                "key": "Collections",
+                "component": "MaisonElvaCollections1"
+              },
+              {
+                "key": "Gallery",
+                "component": "MaisonElvaGallery1"
+              },
+              {
+                "key": "Testimonials",
+                "component": "MaisonElvaTestimonials1"
+              },
+              {
+                "key": "Contact",
+                "component": "MaisonElvaContact1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Header": {
+        "variants": {
+          "MaisonElvaHeader1": {
+            "brand": {
+              "name": "Maison Élva",
+              "logo": {
+                "src": "/images/logo.webp",
+                "alt": "Maison Élva — Jewellery | Fashion Apparel",
+                "width": 1958,
+                "height": 436
+              }
+            },
+            "seo": {
+              "title": "Maison Élva | Fine Jewellery & Fashion Apparel",
+              "description": "Discover Maison Élva — timeless fine jewellery collections of rings, necklaces, earrings, bracelets and bridal pieces, crafted to celebrate your unique story."
+            },
+            "navigation": [
+              {
+                "label": "Home",
+                "href": "#home"
+              },
+              {
+                "label": "About Us",
+                "href": "#about"
+              },
+              {
+                "label": "Collections",
+                "href": "#collections"
+              },
+              {
+                "label": "Gallery",
+                "href": "#gallery"
+              },
+              {
+                "label": "Testimonials",
+                "href": "#testimonials"
+              },
+              {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            ],
+            "cta": {
+              "label": "Enquiry Now"
+            },
+            "labels": {
+              "mainNav": "Main navigation",
+              "mobileNav": "Mobile navigation",
+              "openMenu": "Open menu",
+              "closeMenu": "Close menu",
+              "home": "Maison Élva — back to top"
+            }
+          }
+        }
+      },
+      "Hero": {
+        "variants": {
+          "MaisonElvaHero1": {
+            "label": "Timeless Elegance",
+            "titleTop": "Fine",
+            "titleAccent": "Jewellery",
+            "titleBottom": "Collection",
+            "description": "Crafted to celebrate your unique story, our jewellery blends modern sophistication with timeless artistry — from heirloom bridal sets to everyday gold you’ll never take off.",
+            "button": {
+              "label": "Explore Collection"
+            },
+            "secondaryButton": {
+              "label": "Contact Us",
+              "href": "#contact"
+            },
+            "highlights": [
+              {
+                "title": "Rings",
+                "text": "Solitaire to Eternity"
+              },
+              {
+                "title": "Necklaces",
+                "text": "Pendants & Sets"
+              },
+              {
+                "title": "Bridal",
+                "text": "Heirloom Pieces"
+              }
+            ],
+            "image": "/images/home/hero-model.webp",
+            "imageAlt": "Model wearing a ruby and diamond necklace, earrings and ring",
+            "badge": {
+              "value": "15+",
+              "label": "Years of artistry"
+            }
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "MaisonElvaAbout1": {
+            "label": "About Maison Élva",
+            "titleTop": "A Story of",
+            "titleAccent": "Timeless Beauty",
+            "paragraphs": [
+              "At Maison ÉLVA, we believe jewellery is more than an adornment — it’s a reflection of your story, your moments and your individuality.",
+              "Our collections are thoughtfully crafted with exquisite detail, blending modern elegance with timeless artistry to create pieces that stay with you forever."
+            ],
+            "primaryImage": "/images/home/story-model.webp",
+            "primaryImageAlt": "Model wearing Maison Élva fine jewellery",
+            "secondaryImage": "/images/home/story-necklace.webp",
+            "secondaryImageAlt": "Diamond necklace detail",
+            "sideText": "Since 2010 · Maison Élva",
+            "statements": [
+              {
+                "title": "Our Mission",
+                "text": "To create timeless jewellery that celebrates individuality, craftsmanship and elegance."
+              },
+              {
+                "title": "Our Vision",
+                "text": "To be a trusted, inspiring brand known for refined design and exceptional quality."
+              }
+            ],
+            "stats": [
+              {
+                "value": 2500,
+                "suffix": "+",
+                "label": "Happy Clients"
+              },
+              {
+                "value": 15,
+                "suffix": "",
+                "label": "Years of Craftsmanship"
+              },
+              {
+                "value": 100,
+                "suffix": "%",
+                "label": "Certified Diamonds"
+              }
+            ],
+            "button": {
+              "label": "Book a Private Viewing"
+            }
+          }
+        }
+      },
+      "Collections": {
+        "variants": {
+          "MaisonElvaCollections1": {
+            "label": "Our Collections",
+            "titleTop": "Signature",
+            "titleAccent": "Categories",
+            "description": "From everyday elegance to extraordinary pieces, explore jewellery that celebrates your unique story.",
+            "cardButton": "Contact Us",
+            "cards": [
+              {
+                "title": "Rings",
+                "image": "/images/gallery/solitaire-ring.webp",
+                "text": "Solitaires, halo and eternity bands crafted to mark promises, milestones and everyday elegance."
+              },
+              {
+                "title": "Necklaces",
+                "image": "/images/collections/radiant-halo-model.webp",
+                "text": "Cluster necklaces, delicate pendants and statement pieces that frame the collarbone with light."
+              },
+              {
+                "title": "Earrings",
+                "image": "/images/gallery/drop-earrings.webp",
+                "text": "From starburst studs to pear-cut drops — earrings designed to catch every glance."
+              },
+              {
+                "title": "Bracelets",
+                "image": "/images/collections/aurora-golden-bracelet.webp",
+                "text": "Tennis bracelets and sculptural golden cuffs that layer beautifully, day to evening."
+              },
+              {
+                "title": "Bridal Jewellery",
+                "image": "/images/home/hero-model.webp",
+                "text": "Heirloom bridal sets with rubies, diamonds and gold, curated for your most cherished day."
+              },
+              {
+                "title": "Custom Design",
+                "image": "/images/about/mission-rings.webp",
+                "text": "Work one-on-one with our designers to bring a piece that is uniquely yours to life."
+              }
+            ],
+            "featured": {
+              "label": "New Arrivals",
+              "titleTop": "The Golden",
+              "titleAccent": "Bracelet",
+              "titleBottom": "Edit",
+              "description": "Sculptural gold, softly textured — designed to stack, gift and treasure.",
+              "button": {
+                "label": "Enquire Now",
+                "enquiryFor": "Bracelets"
+              },
+              "itemMeta": "Bracelet · Golden",
+              "items": [
+                {
+                  "name": "Aurora Golden Bracelet",
+                  "image": "/images/collections/aurora-golden-bracelet.webp"
+                },
+                {
+                  "name": "Bloom Golden Bracelet",
+                  "image": "/images/collections/bloom-golden-bracelet.webp"
+                },
+                {
+                  "name": "Velvet Golden Bracelet",
+                  "image": "/images/collections/velvet-golden-bracelet.webp"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Gallery": {
+        "variants": {
+          "MaisonElvaGallery1": {
+            "label": "Gallery",
+            "titleTop": "Moments of",
+            "titleAccent": "Timeless Beauty",
+            "description": "A glimpse into our world of exquisite craftsmanship, refined designs and timeless jewellery pieces.",
+            "images": [
+              {
+                "src": "/images/gallery/diamond-necklace.webp",
+                "alt": "Diamond cluster necklace worn at the collarbone"
+              },
+              {
+                "src": "/images/gallery/emerald-cut-ring.webp",
+                "alt": "Emerald-cut diamond ring on a pavé band"
+              },
+              {
+                "src": "/images/gallery/tennis-bracelet.webp",
+                "alt": "Gold and diamond tennis bracelet"
+              },
+              {
+                "src": "/images/gallery/drop-earrings.webp",
+                "alt": "Pear diamond drop earrings on a stone plinth"
+              },
+              {
+                "src": "/images/gallery/pear-pendant.webp",
+                "alt": "Pear-shaped diamond halo pendant"
+              },
+              {
+                "src": "/images/gallery/eternity-bands.webp",
+                "alt": "Stacked gold eternity bands with diamonds"
+              },
+              {
+                "src": "/images/gallery/halo-pendant.webp",
+                "alt": "Round halo diamond pendant on a gold chain"
+              },
+              {
+                "src": "/images/gallery/starburst-studs.webp",
+                "alt": "Starburst diamond stud earrings"
+              },
+              {
+                "src": "/images/gallery/solitaire-ring.webp",
+                "alt": "Solitaire diamond ring with matching pavé band"
+              },
+              {
+                "src": "/images/gallery/hoop-earrings.webp",
+                "alt": "Diamond-set golden hoop earrings"
+              }
+            ],
+            "button": {
+              "label": "Request the Full Lookbook"
+            },
+            "viewerLabel": "Gallery image viewer",
+            "closeLabel": "Close viewer",
+            "previousLabel": "Previous image",
+            "nextLabel": "Next image"
+          }
+        }
+      },
+      "Testimonials": {
+        "variants": {
+          "MaisonElvaTestimonials1": {
+            "label": "Testimonials",
+            "titleTop": "Trusted By",
+            "titleAccent": "Our Clients",
+            "description": "Real stories from our valued clients who cherish our jewellery and the moments it represents.",
+            "image": "/images/home/testimonial-model.webp",
+            "imageAlt": "A happy Maison Élva client wearing her jewellery",
+            "rating": {
+              "value": "4.9/5",
+              "label": "Average client rating"
+            },
+            "role": "Happy Customer",
+            "ratingLabel": "Rated 5 out of 5",
+            "previousLabel": "Previous testimonial",
+            "nextLabel": "Next testimonial",
+            "showLabel": "Show testimonial from {name}",
+            "items": [
+              {
+                "name": "Aaradhya Mehta",
+                "city": "Mumbai",
+                "quote": "The quality and finish of the jewellery is simply outstanding. I bought a diamond ring for our anniversary and it exceeded all my expectations. Truly a timeless piece!"
+              },
+              {
+                "name": "Priya Sharma",
+                "city": "Delhi",
+                "quote": "Beautiful collection with elegant designs. The team guided me to the perfect necklace for my special occasion, and the entire experience was smooth and delightful."
+              },
+              {
+                "name": "Sneha Kapoor",
+                "city": "Bengaluru",
+                "quote": "I bought a pair of diamond earrings and I’m in love with them. The craftsmanship is exceptional and the detailing is just perfect. Definitely my go-to jewellery store!"
+              },
+              {
+                "name": "Kavya Nair",
+                "city": "Chennai",
+                "quote": "From design to delivery, everything was flawless. The jewellery looks even more beautiful in person, with premium quality, elegant packaging and excellent service."
+              },
+              {
+                "name": "Rhea Malhotra",
+                "city": "Kolkata",
+                "quote": "I ordered a pendant for my mother’s birthday and she absolutely loved it. The design is classic and the quality is unmatched. Thank you for making it such a special gift."
+              },
+              {
+                "name": "Ananya Desai",
+                "city": "Pune",
+                "quote": "Exceptional collection and outstanding service. The jewellery is elegant, modern and perfect for every occasion. I highly recommend them to anyone who truly values quality."
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "MaisonElvaContact1": {
+            "label": "Contact Us",
+            "titleTop": "We’d Love to",
+            "titleAccent": "Hear From You",
+            "description": "Have a question, need assistance, or looking for the perfect piece? Our team is here to help with personalised guidance and exceptional service.",
+            "info": [
+              {
+                "icon": "location",
+                "title": "Our Location",
+                "lines": [
+                  "123 Main Street,",
+                  "New York, NY 10001, USA"
+                ],
+                "href": "https://maps.google.com/?q=123+Main+Street+New+York+NY+10001"
+              },
+              {
+                "icon": "phone",
+                "title": "Instant Connect",
+                "lines": [
+                  "+1 0000000000"
+                ],
+                "href": "tel:+10000000000"
+              },
+              {
+                "icon": "mail",
+                "title": "Mail Us",
+                "lines": [
+                  "info@xyz.com",
+                  "support@xyz.com"
+                ],
+                "href": "mailto:info@xyz.com"
+              }
+            ],
+            "form": {
+              "label": "Send Us a Message",
+              "title": "Request a Consultation",
+              "description": "Fill out your details below and a dedicated jewellery consultant will contact you within 24 hours."
+            }
+          }
+        }
+      },
+      "EnquiryForm": {
+        "variants": {
+          "MaisonElvaEnquiryForm1": {
+            "label": "Enquiry Now",
+            "title": "Begin Your Jewellery Journey",
+            "description": "Share a few details and our jewellery consultant will reach out within 24 hours.",
+            "image": "/images/home/testimonial-model.webp",
+            "imageLabel": "Private Consultation",
+            "imageQuote": "“Jewellery that tells your story.”",
+            "fields": {
+              "name": "Your Name*",
+              "phone": "Phone Number*",
+              "email": "Email Address*",
+              "enquiryFor": "Enquiry For*",
+              "budget": "Budget Range",
+              "message": "Your Message*"
+            },
+            "enquiryOptions": [
+              "Rings",
+              "Necklaces",
+              "Earrings",
+              "Bracelets",
+              "Custom Design",
+              "Bridal Jewellery",
+              "Other"
+            ],
+            "budgetOptions": [
+              "Under ₹50,000",
+              "₹50,000 – ₹1,00,000",
+              "₹1,00,000 – ₹2,50,000",
+              "Above ₹2,50,000"
+            ],
+            "button": "Submit Enquiry",
+            "sending": "Sending…",
+            "successTitle": "Thank you, {name}!",
+            "success": "Your enquiry has been received. Our consultant will contact you within 24 hours.",
+            "closeLabel": "Close message",
+            "closeModalLabel": "Close enquiry form"
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "MaisonElvaFooter1": {
+            "tagline": "Timeless jewellery and fashion for a more confident you.",
+            "quickLinksTitle": "Quick Links",
+            "quickLinks": [
+              {
+                "label": "Home",
+                "href": "#home"
+              },
+              {
+                "label": "About Us",
+                "href": "#about"
+              },
+              {
+                "label": "Collections",
+                "href": "#collections"
+              },
+              {
+                "label": "Gallery",
+                "href": "#gallery"
+              },
+              {
+                "label": "Testimonials",
+                "href": "#testimonials"
+              },
+              {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            ],
+            "contactTitle": "Get In Touch",
+            "socials": [
+              {
+                "platform": "instagram",
+                "label": "Instagram",
+                "href": "https://www.instagram.com/"
+              },
+              {
+                "platform": "facebook",
+                "label": "Facebook",
+                "href": "https://www.facebook.com/"
+              },
+              {
+                "platform": "linkedin",
+                "label": "LinkedIn",
+                "href": "https://www.linkedin.com/"
+              }
+            ],
+            "copyright": "© {year} Maison Élva. All Rights Reserved. Powered by Lestow.",
+            "motto": [
+              "Timeless",
+              "Elegant",
+              "You"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
